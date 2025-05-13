@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VighnahartaMeds - Online Pharmacy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,82 +14,71 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
+      background-color: #f5f5f5;
       color: #333;
     }
 
+    /* HEADER */
     header {
-      background: #1f5673;
-      color: #fff;
-      padding: 10px 20px;
-      text-align: center;
+      background-color: #1f5673;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
     }
 
-    header .logo {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    header nav {
-      display: flex;
-      justify-content: center;
-    }
-
-    header nav a {
+    .logo {
       color: #fff;
-      margin: 0 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
+      transition: 0.3s;
     }
 
-    header nav a:hover {
+    nav a:hover {
       color: #f5c45e;
     }
 
-    /* Hamburger Menu (visible on smaller screens) */
     .hamburger {
       display: none;
       flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 20px;
       cursor: pointer;
     }
 
-    .hamburger div {
-      background-color: white;
-      height: 4px;
-      width: 100%;
+    .hamburger span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      transition: 0.3s;
     }
 
-    /* Navbar toggle effect */
-    .menu-toggle {
-      display: none;
-    }
-
-    .menu-toggle:checked + nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Hero section */
+    /* HERO SECTION */
     .hero {
-      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-      padding: 80px 20px;
+      background: linear-gradient(to right, #1f5673, #3786a0);
+      padding: 60px 20px;
       text-align: center;
       color: black;
     }
 
     .hero h1 {
-      font-size: 3em;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1.2em;
+      font-size: 18px;
       margin-bottom: 20px;
     }
 
@@ -97,37 +86,33 @@
       background-color: #f5c45e;
       color: white;
       padding: 12px 24px;
-      text-decoration: none;
-      font-size: 1em;
+      border: none;
       border-radius: 5px;
-      transition: 0.3s;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .btn-primary:hover {
       background-color: #ffcc00;
     }
 
-    /* Product section */
+    /* PRODUCTS */
     .products {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      margin: 40px 20px;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
     }
 
     .product-card {
       background: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 30%;
-      margin: 20px;
       border-radius: 10px;
-      padding: 20px;
+      width: 280px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
+      padding: 20px;
     }
 
     .product-card img {
@@ -136,14 +121,14 @@
       border-radius: 8px;
     }
 
-    .product-card .product-name {
-      font-weight: bold;
-      margin-top: 10px;
+    .product-name {
+      font-weight: 600;
+      margin-top: 15px;
     }
 
-    .product-card .price {
-      font-size: 1.2em;
+    .price {
       color: #1f5673;
+      font-size: 18px;
       margin: 10px 0;
     }
 
@@ -153,77 +138,54 @@
       padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s;
+      display: inline-block;
     }
 
     .btn-buy:hover {
       background-color: #153b50;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
-      background-color: #1f5673;
+      background: #1f5673;
       color: white;
       text-align: center;
       padding: 20px;
     }
 
-    /* Responsive design for mobile and tablets */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .product-card {
-        width: 45%;
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #1f5673;
+        flex-direction: column;
+        align-items: center;
+        display: none;
       }
 
-      header .logo {
-        font-size: 1.6em;
+      nav.active {
+        display: flex;
       }
 
-      .hero h1 {
-        font-size: 2.5em;
-      }
-
-      .hero p {
-        font-size: 1.1em;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .product-card {
-        width: 90%;
-      }
-
-      .hero h1 {
-        font-size: 2em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      .btn-primary {
-        padding: 10px 20px;
-        font-size: 0.9em;
+      .hamburger {
+        display: flex;
       }
     }
-
   </style>
 </head>
-
 <body>
+
   <header>
     <div class="logo">VighnahartaMeds</div>
-
-    <!-- Hamburger icon -->
-    <div class="hamburger" onclick="document.getElementById('menuToggle').checked = !document.getElementById('menuToggle').checked;">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
-    <!-- Menu Toggle -->
-    <input type="checkbox" class="menu-toggle" id="menuToggle" />
-    <nav>
+    <nav id="navMenu">
       <a href="#">Home</a>
       <a href="#">Shop</a>
       <a href="#">About</a>
@@ -231,50 +193,42 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Online Pharmacy</h1>
-    <p>Get your medications delivered at your doorstep</p>
+    <p>Get your medicines delivered at your doorstep!</p>
     <a href="#" class="btn-primary">Shop Now</a>
   </section>
 
-  <!-- Products Section -->
   <section class="products">
-    <!-- Product 1 -->
     <div class="product-card">
-      <img src="https://www.krishlarpharma.com/wp-content/uploads/2019/12/KRITFEN-P-2-tablet.jpg" alt="Product Image">
-      <div class="product-name">Pain Relief Tablet</div>
-      <div class="price">₹150</div>
+      <img src="https://www.krishlarpharma.com/wp-content/uploads/2019/12/KRITFEN-P-2-tablet.jpg" alt="Product">
+      <div class="product-name">Paracetamol 500mg</div>
+      <div class="price">₹35</div>
       <a href="#" class="btn-buy">Buy Now</a>
     </div>
-    <!-- Product 2 -->
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="Product Image">
+      <img src="https://via.placeholder.com/250x180" alt="Product">
       <div class="product-name">Cough Syrup</div>
-      <div class="price">₹120</div>
+      <div class="price">₹70</div>
       <a href="#" class="btn-buy">Buy Now</a>
     </div>
-    <!-- Product 3 -->
     <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="Product Image">
-      <div class="product-name">Antibiotic</div>
-      <div class="price">₹250</div>
+      <img src="https://via.placeholder.com/250x180" alt="Product">
+      <div class="product-name">Antibiotic Capsules</div>
+      <div class="price">₹120</div>
       <a href="#" class="btn-buy">Buy Now</a>
     </div>
   </section>
 
-  <!-- Footer Section -->
   <footer>
     <p>&copy; 2025 VighnahartaMeds. All rights reserved.</p>
   </footer>
 
   <script>
-    // Optional: Close menu when clicked anywhere outside
-    window.onclick = function(event) {
-      if (!event.target.matches('.hamburger') && !event.target.matches('.menu-toggle')) {
-        document.getElementById('menuToggle').checked = false;
-      }
-    };
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
