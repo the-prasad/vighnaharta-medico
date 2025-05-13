@@ -2,199 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VighnahartaMeds - Online Pharmacy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Resetting default styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    /* Global styles */
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f2f7fa;
+      background: #f9f9f9;
       color: #333;
     }
 
     /* Header */
     header {
-      background-color: #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      font-size: 1.8em;
-      font-weight: 700;
-      color: #1a73e8;
-    }
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    nav a {
-      text-decoration: none;
-      color: #1a73e8;
-      font-weight: 500;
-      padding: 6px 12px;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background-color: #e3f2fd;
-    }
-    nav .btn {
-      background-color: #1a73e8;
+      background: #1f5673;
       color: #fff;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(to right, #dbeeff, #ffffff);
-      padding: 80px 5% 60px;
+      padding: 10px 20px;
       text-align: center;
     }
-    .hero h1 {
-      font-size: 2.8em;
-      color: #1a73e8;
-    }
-    .hero p {
-      font-size: 1.1em;
-      margin: 20px 0;
-      color: #444;
-    }
-    .btn-primary {
-      background-color: #1a73e8;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 1em;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .btn-primary:hover {
-      background-color: #0f5cbf;
-    }
 
-    /* Products */
-    .products {
-      padding: 60px 5%;
-      background: #f0f8ff;
-    }
-    .products h2 {
-      text-align: center;
-      margin-bottom: 40px;
+    header .logo {
       font-size: 2em;
-      color: #1a73e8;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-    }
-    .product-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-      text-align: center;
-      transition: 0.3s;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-    }
-    .product-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 15px;
-    }
-    .product-card h3 {
-      font-size: 1.2em;
-      color: #1a73e8;
-      margin-bottom: 8px;
-    }
-    .product-card p {
-      font-size: 0.95em;
-      color: #555;
+      font-weight: bold;
       margin-bottom: 10px;
     }
-    .product-card .price {
-      font-weight: bold;
-      color: #1a73e8;
-      margin-bottom: 12px;
-    }
-    .buy-now {
-      background-color: #1a73e8;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 5px;
+
+    header nav a {
+      color: #fff;
+      margin: 0 20px;
       text-decoration: none;
-      font-weight: 500;
-      display: inline-block;
+      font-weight: 600;
+    }
+
+    header nav a:hover {
+      color: #f5c45e;
+    }
+
+    /* Hero section */
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #f5c45e;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 1em;
+      border-radius: 5px;
       transition: 0.3s;
     }
-    .buy-now:hover {
-      background-color: #0f5cbf;
+
+    .btn-primary:hover {
+      background-color: #ffcc00;
+    }
+
+    /* Product section */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 40px 0;
+    }
+
+    .product-card {
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      margin: 20px;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-card .product-name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .product-card .price {
+      font-size: 1.2em;
+      color: #1f5673;
+      margin: 10px 0;
+    }
+
+    .btn-buy {
+      background-color: #1f5673;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s;
+    }
+
+    .btn-buy:hover {
+      background-color: #153b50;
     }
 
     /* Footer */
     footer {
+      background-color: #1f5673;
+      color: white;
       text-align: center;
       padding: 20px;
-      background: #1a73e8;
-      color: white;
-      margin-top: 40px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-      nav {
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .btn-primary,
-      nav .btn {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-      }
-      .product-card img {
-        width: 80px;
-        height: 80px;
-      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">VighnahartaMeds</div>
@@ -202,52 +148,45 @@
       <a href="#">Home</a>
       <a href="#">Shop</a>
       <a href="#">About</a>
-      <a href="#" class="btn">Contact</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Trusted Online Pharmacy</h1>
-    <p>Get genuine medicines with fast delivery across India</p>
-    <a href="#" class="btn-primary">Start Shopping</a>
+    <h1>Online Pharmacy</h1>
+    <p>Get your medications delivered at your doorstep</p>
+    <a href="#" class="btn-primary">Shop Now</a>
   </section>
 
+  <!-- Products Section -->
   <section class="products">
-    <h2>Top Selling Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://i.imgur.com/6xL6MFH.png" alt="Paracetamol">
-        <h3>Paracetamol Tablets</h3>
-        <p>Pain relief and fever reducer</p>
-        <div class="price">₹25 / strip</div>
-        <a href="#" class="buy-now">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://i.imgur.com/Nk2RtVb.png" alt="Cough Syrup">
-        <h3>Cough Syrup</h3>
-        <p>Soothes sore throat and cough</p>
-        <div class="price">₹65 / bottle</div>
-        <a href="#" class="buy-now">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://i.imgur.com/zye2xVv.png" alt="Vitamin D">
-        <h3>Vitamin D Tablets</h3>
-        <p>Boosts immunity and bones</p>
-        <div class="price">₹120 / bottle</div>
-        <a href="#" class="buy-now">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://i.imgur.com/WF2UwY6.png" alt="Antacid">
-        <h3>Antacid Tablets</h3>
-        <p>Relieves acidity & heartburn</p>
-        <div class="price">₹30 / strip</div>
-        <a href="#" class="buy-now">Buy Now</a>
-      </div>
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200" alt="Product Image">
+      <div class="product-name">Pain Relief Tablet</div>
+      <div class="price">₹150</div>
+      <a href="#" class="btn-buy">Buy Now</a>
+    </div>
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200" alt="Product Image">
+      <div class="product-name">Cough Syrup</div>
+      <div class="price">₹120</div>
+      <a href="#" class="btn-buy">Buy Now</a>
+    </div>
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x200" alt="Product Image">
+      <div class="product-name">Antibiotic</div>
+      <div class="price">₹250</div>
+      <a href="#" class="btn-buy">Buy Now</a>
     </div>
   </section>
 
+  <!-- Footer Section -->
   <footer>
-    <p>© 2025 VighnahartaMeds. All rights reserved.</p>
+    <p>&copy; 2025 VighnahartaMeds. All rights reserved.</p>
   </footer>
 </body>
 </html>
