@@ -6,32 +6,35 @@
   <title>VighnahartaMeds - Online Pharmacy</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Resetting default styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Global styles */
     body {
       font-family: 'Poppins', sans-serif;
       background: #f9f9f9;
       color: #333;
     }
 
-    /* Header */
     header {
       background: #1f5673;
       color: #fff;
       padding: 10px 20px;
       text-align: center;
+      position: relative;
     }
 
     header .logo {
       font-size: 2em;
       font-weight: bold;
       margin-bottom: 10px;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: center;
     }
 
     header nav a {
@@ -45,12 +48,39 @@
       color: #f5c45e;
     }
 
+    /* Hamburger Menu (visible on smaller screens) */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      background-color: white;
+      height: 4px;
+      width: 100%;
+    }
+
+    /* Navbar toggle effect */
+    .menu-toggle {
+      display: none;
+    }
+
+    .menu-toggle:checked + nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     /* Hero section */
     .hero {
       background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
       padding: 80px 20px;
       text-align: center;
-      color: black;
+      color: white;
     }
 
     .hero h1 {
@@ -94,7 +124,6 @@
       padding: 20px;
       text-align: center;
       transition: transform 0.3s;
-      border: 1px solid black;
     }
 
     .product-card:hover {
@@ -184,6 +213,16 @@
 <body>
   <header>
     <div class="logo">VighnahartaMeds</div>
+
+    <!-- Hamburger icon -->
+    <div class="hamburger" onclick="document.getElementById('menuToggle').checked = !document.getElementById('menuToggle').checked;">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Menu Toggle -->
+    <input type="checkbox" class="menu-toggle" id="menuToggle" />
     <nav>
       <a href="#">Home</a>
       <a href="#">Shop</a>
@@ -222,31 +261,20 @@
       <div class="price">₹250</div>
       <a href="#" class="btn-buy">Buy Now</a>
     </div>
-     <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="Product Image">
-      <div class="product-name">Pain Relief Tablet</div>
-      <div class="price">₹120</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="Product Image">
-      <div class="product-name">Cough Syrup</div>
-      <div class="price">₹170</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/200x200" alt="Product Image">
-      <div class="product-name">Antibiotic</div>
-      <div class="price">₹290</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
   </section>
 
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2025 VighnahartaMeds. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Optional: Close menu when clicked anywhere outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.hamburger') && !event.target.matches('.menu-toggle')) {
+        document.getElementById('menuToggle').checked = false;
+      }
+    };
+  </script>
 </body>
 </html>
