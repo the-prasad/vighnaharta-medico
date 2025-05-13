@@ -81,8 +81,8 @@
     .products {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      margin: 40px 0;
+      justify-content: space-between;
+      margin: 40px 20px;
     }
 
     .product-card {
@@ -138,6 +138,45 @@
       text-align: center;
       padding: 20px;
     }
+
+    /* Responsive design for mobile and tablets */
+    @media (max-width: 768px) {
+      .product-card {
+        width: 45%;
+      }
+
+      header .logo {
+        font-size: 1.6em;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-card {
+        width: 90%;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
+
   </style>
 </head>
 
