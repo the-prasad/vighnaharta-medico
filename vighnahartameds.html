@@ -34,3 +34,228 @@
       font-weight: bold;
     }
 
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffc107;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #1f5673;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #1f5673;
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #144054;
+    }
+
+    /* PRODUCT GRID */
+    .products {
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background-color: #f9f9f9;
+      padding: 10px;
+    }
+
+    .product-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 15px;
+      color: #1f5673;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn-buy {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #1f5673;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .btn-buy:hover {
+      background-color: #144054;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #1f5673;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 30px;
+    }
+
+    /* RESPONSIVE NAVIGATION */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #1f5673;
+        padding: 20px;
+        width: 200px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">VighnahartaMeds</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Online Pharmacy</h1>
+    <p>Get your medicines delivered at your doorstep!</p>
+    <a href="#" class="btn-primary">Shop Now</a>
+  </section>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://www.krishlarpharma.com/wp-content/uploads/2019/12/KRITFEN-P-2-tablet.jpg" alt="Paracetamol">
+      <div class="product-info">
+        <h3 class="product-name">Paracetamol 500mg</h3>
+        <p class="price">₹35</p>
+        <a href="#" class="btn-buy">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://www.adorefem.com/wp-content/uploads/2018/06/DUBACARE-3-scaled.jpg" alt="Cough Syrup">
+      <div class="product-info">
+        <h3 class="product-name">Cough Syrup</h3>
+        <p class="price">₹70</p>
+        <a href="#" class="btn-buy">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/250x180" alt="Antibiotic Capsules">
+      <div class="product-info">
+        <h3 class="product-name">Antibiotic Capsules</h3>
+        <p class="price">₹120</p>
+        <a href="#" class="btn-buy">Buy Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 VighnahartaMeds. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
