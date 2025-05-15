@@ -2,52 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VighnahartaMeds - Online Pharmacy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VighnahartaMeds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
+      background-color: #f1f3f6;
       color: #333;
     }
 
-    /* HEADER */
     header {
-      background-color: #1f5673;
-      padding: 15px 20px;
+      background-color: #2874f0;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
-      color: #fff;
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 1.5rem;
+      font-weight: 700;
     }
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 2rem;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #f5c45e;
+      color: #ffeb3b;
     }
 
     .hamburger {
@@ -57,113 +58,117 @@
     }
 
     .hamburger span {
-      background: white;
       height: 3px;
       width: 25px;
-      margin: 4px 0;
-      transition: 0.3s;
+      background: white;
+      margin-bottom: 5px;
+      border-radius: 2px;
     }
 
-    /* HERO SECTION */
     .hero {
-      background: linear-gradient(to right, #1f5673, #3786a0);
-      padding: 60px 20px;
+      padding: 3rem 2rem;
       text-align: center;
-      color: white;
+      background: white;
     }
 
     .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      color: #2874f0;
     }
 
     .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
+      margin: 1rem 0;
+      font-size: 1.2rem;
     }
 
     .btn-primary {
-      background-color: #f5c45e;
+      background: #2874f0;
       color: white;
-      padding: 12px 24px;
+      padding: 0.75rem 1.5rem;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+      border-radius: 4px;
       text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
     }
 
     .btn-primary:hover {
-      background-color: #ffcc00;
+      background: #0a58ca;
     }
 
-    /* PRODUCTS */
     .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
 
     .product-card {
       background: white;
-      border-radius: 10px;
-      width: 280px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
       text-align: center;
-      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
     }
 
     .product-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
     }
 
     .product-name {
+      margin: 1rem 0 0.5rem;
       font-weight: 600;
-      margin-top: 15px;
     }
 
     .price {
-      color: #1f5673;
-      font-size: 18px;
-      margin: 10px 0;
+      font-size: 1.1rem;
+      color: #388e3c;
+      font-weight: bold;
     }
 
     .btn-buy {
-      background-color: #1f5673;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
       display: inline-block;
+      margin-top: 1rem;
+      background: #ff9f00;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
     .btn-buy:hover {
-      background-color: #153b50;
+      background: #fb8c00;
     }
 
-    /* FOOTER */
     footer {
-      background: #1f5673;
+      background-color: #2874f0;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 1rem 0;
+      margin-top: 2rem;
     }
 
-    /* RESPONSIVE */
+    /* Responsive menu */
     @media (max-width: 768px) {
       nav {
+        display: none;
+        flex-direction: column;
+        background: #2874f0;
         position: absolute;
         top: 60px;
-        left: 0;
         right: 0;
-        background: #1f5673;
-        flex-direction: column;
-        align-items: center;
-        display: none;
+        width: 200px;
+        padding: 1rem;
       }
 
       nav.active {
