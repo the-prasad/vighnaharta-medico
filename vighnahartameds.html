@@ -2,238 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VighnahartaMeds</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VighnahartaMeds - Online Pharmacy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: #f1f3f6;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
       color: #333;
     }
 
+    /* HEADER */
     header {
-      background-color: #2874f0;
-      padding: 1rem 2rem;
+      background-color: #1f5673;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: relative;
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffeb3b;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin-bottom: 5px;
-      border-radius: 2px;
-    }
-
-    .hero {
-      padding: 3rem 2rem;
-      text-align: center;
-      background: white;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #2874f0;
-    }
-
-    .hero p {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-    }
-
-    .btn-primary {
-      background: #2874f0;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .btn-primary:hover {
-      background: #0a58ca;
-    }
-
-    .products {
-      padding: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .product-card img {
-      max-width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    .product-name {
-      margin: 1rem 0 0.5rem;
-      font-weight: 600;
-    }
-
-    .price {
-      font-size: 1.1rem;
-      color: #388e3c;
+      color: #fff;
+      font-size: 24px;
       font-weight: bold;
     }
 
-    .btn-buy {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #ff9f00;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-
-    .btn-buy:hover {
-      background: #fb8c00;
-    }
-
-    footer {
-      background-color: #2874f0;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      margin-top: 2rem;
-    }
-
-    /* Responsive menu */
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background: #2874f0;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="logo">VighnahartaMeds</div>
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <nav id="navMenu">
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Online Pharmacy</h1>
-    <p>Get your medicines delivered at your doorstep!</p>
-    <a href="#" class="btn-primary">Shop Now</a>
-  </section>
-
-  <section class="products">
-    <div class="product-card">
-      <img src="https://www.krishlarpharma.com/wp-content/uploads/2019/12/KRITFEN-P-2-tablet.jpg" alt="Product">
-      <div class="product-name">Paracetamol 500mg</div>
-      <div class="price">₹35</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="https://www.adorefem.com/wp-content/uploads/2018/06/DUBACARE-3-scaled.jpg" alt="Product">
-      <div class="product-name">Cough Syrup</div>
-      <div class="price">₹70</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/250x180" alt="Product">
-      <div class="product-name">Antibiotic Capsules</div>
-      <div class="price">₹120</div>
-      <a href="#" class="btn-buy">Buy Now</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 VighnahartaMeds. All rights reserved.</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
-    }
-  </script>
-</body>
-</html>
